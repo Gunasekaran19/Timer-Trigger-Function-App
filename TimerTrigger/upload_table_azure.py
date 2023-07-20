@@ -4,7 +4,7 @@ from azure.data.tables import TableClient
 from azure.core.exceptions import ResourceExistsError
 
 def upload_weather_data(weather_data):
-    connection_string = 'DefaultEndpointsProtocol=https;AccountName=stagegamificationui;AccountKey=iz+cqYsgOmtZL6QYqU0XK4kvm1g83Oj9EEL89dtvjOQkZi5fQnSwZ+/f1D5wSGzoh3lxYLiI5maZAbejnad4Fg==;EndpointSuffix=core.windows.net;'
+    connection_string = 'use_your_connection_string'
 
 # Create a TableClient
     table_client = TableClient.from_connection_string(connection_string, "wheatherdata")
