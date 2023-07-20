@@ -3,6 +3,7 @@ import logging
 
 import azure.functions as func
 from .check_weather import get_weather_data
+from .upload_table_azure import upload_weather_data
 
 def main(mytimer: func.TimerRequest) -> None:
     api_key ="4a3251a0b240c7ea09c718c2640ab07a"
@@ -24,6 +25,7 @@ def main(mytimer: func.TimerRequest) -> None:
         print(f"Temperature: {weather_data['main']['temp']}°C")
         print(f"Humidity: {weather_data['main']['humidity']}%")
         print(f"Wind Speed: {weather_data['wind']['speed']} m/s")
+        upload_weather_data(weather_data)
     else:
         print("Weather data not available.")
 
